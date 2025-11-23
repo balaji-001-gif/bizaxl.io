@@ -1,0 +1,147 @@
+.page {
+    width: 100%;
+    min-height: calc(100vh - var(--header-height));
+}
+
+.container {
+    display: flex;
+    gap: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+.sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    display: none;
+    flex-direction: column;
+    gap: 2rem;
+    border-right: 1px solid var(--border);
+    padding-right: 2rem;
+    height: fit-content;
+}
+
+.sidebarGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sidebarTitle {
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--foreground);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.sidebarLink {
+    font-size: 0.95rem;
+    color: var(--muted-foreground);
+    padding: 0.25rem 0;
+    transition: color 0.2s ease;
+}
+
+.sidebarLink:hover,
+.active {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.content {
+    flex: 1;
+    max-width: 800px;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.lead {
+    font-size: 1.25rem;
+    color: var(--muted-foreground);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.prose {
+    line-height: 1.7;
+    color: var(--foreground);
+}
+
+.prose h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.prose p {
+    margin-bottom: 1.5rem;
+}
+
+.prose ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.prose li {
+    margin-bottom: 0.5rem;
+}
+
+.quickLinks {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.quickLink {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: all 0.2s ease;
+    color: var(--foreground);
+}
+
+.quickLink:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.quickLink h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.quickLink p {
+    font-size: 0.95rem;
+    color: var(--muted-foreground);
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .sidebar {
+        display: flex;
+    }
+
+    .quickLinks {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
